@@ -1,0 +1,63 @@
+@use '../../styles/abstracts/variables';
+.primary-header {
+  padding: .5em 1em 0 1em;
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      height: 2.6875em;
+      width: 6em;
+    }
+    .right {
+      display: flex;
+      gap: 0.625em;
+      align-items: center;
+      .fillheart-icon {
+        cursor: pointer;
+      }
+      .cart-icon {
+        cursor: pointer;
+      }
+    }
+    .primary-navigation {
+      .nav-list {
+        display: none;
+        gap: 2em;
+        .list-item {
+          font-size: map-get(variables.$mainText, "body-M");
+        }
+      }
+      .hamburger-menu {
+        cursor: pointer;
+      }
+    }
+    .login-btn {
+      display: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .primary-header {
+    .container {
+      .right {
+        gap: 2em;
+        .primary-navigation {
+          .nav-list {
+            display: flex;
+          }
+        }
+        .hamburger-menu {
+          display: none;
+        }
+        .login-btn {
+          display: block;
+        }
+      }
+    }
+  }
+}
